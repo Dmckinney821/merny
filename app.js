@@ -12,6 +12,7 @@ const HttpError = require('./models/http-error')
 const app = express();
 
 app.use(bodyParser.json())
+const mongoose = require('mongoose');
 
 app.use('/api/places', placesRoutes) // => /api/places
 
@@ -30,5 +31,12 @@ app.use((error, req, res, next) => {
     res.json({message: error.message || 'An unknown error occured'})
 })
 
+mongoose
+    .connect('mongodb+srv://3dhdaniel:Chuhoop3!@cluster0-afta0.mongodb.net/places?retryWrites=true&w=majority')
+    .then(() => {
+        app.listen(5000);
+    })
+    .catch(err => {
+        console.log(err)
+    });
 
-app.listen(5000);
