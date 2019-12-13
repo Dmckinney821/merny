@@ -1,0 +1,9 @@
+
+{
+    "env": {
+        "DB_USER": "3dhdaniel",
+        "DB_PASSWORD": "Chuhoop3!",
+        "DB_NAME": "mern",
+        "JWT_KEY": "supersecret_dont_share"
+    }
+}
